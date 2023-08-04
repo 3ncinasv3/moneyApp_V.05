@@ -33,9 +33,7 @@ public class mainLogin {
       stage.setScene(secondScene);
       stage.setResizable(true);
       stage.show();
-    }
-
-    if (Authenticator.isValid(enteredUsername, enteredPassword)) {
+    } else if (Authenticator.isValid(enteredUsername, enteredPassword)) {
       Parent secondRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("customerPane.fxml")));
       Scene secondScene = new Scene(secondRoot);
       Stage stage = (Stage) loginButton.getScene().getWindow();
@@ -43,6 +41,7 @@ public class mainLogin {
       stage.setResizable(true);
       stage.show();
     }
+    else outputLabel.setText("Invalid login");
   }
   @FXML
   void registerButton(ActionEvent event) throws IOException {

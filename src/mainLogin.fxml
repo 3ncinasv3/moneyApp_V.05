@@ -26,7 +26,10 @@
          <Insets />
       </opaqueInsets>
    </Button>
-   <Label fx:id="outputLabel" layoutX="225.0" layoutY="298.0" />
+   <Label fx:id="outputLabel" layoutX="225.0" layoutY="298.0" textFill="#f60000">
+      <font>
+         <Font size="18.0" />
+      </font></Label>
    <ImageView fitHeight="54.0" fitWidth="48.0" layoutX="36.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@logo3.png" />
    </ImageView>
