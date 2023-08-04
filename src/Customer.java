@@ -1,30 +1,20 @@
 public class Customer extends User {
-  public Customer() {
-    super();
-  }
+  private double balance;
   public Customer(String username, String password){
     this.username = username;
     this.password = password;
-  }
-  public void setAccountNumber(String accountNumber) {
-    this.accountNumber = accountNumber;
-  }
-  public String getAccountNumber() {
-    return this.accountNumber;
-  }
-  public static boolean isCustomer(String username, String password) {
-    return false;
+    this.balance = 0.0;
   }
   public String getUsername() {
     return username;
   }
-  public void setUsername(String username) {
-    this.username = username;
-  }
   public String getPassword() {
     return password;
   }
-  public void setPassword(String password) {
-    this.password = password;
+  public double getBalance() {
+    return balance;
+  }
+  public void setBalance(double balance) {
+    this.balance = balance;
   }
 }
