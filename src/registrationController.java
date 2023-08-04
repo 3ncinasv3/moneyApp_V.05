@@ -23,7 +23,7 @@ public class registrationController {
   @FXML
   private TextField userNameField;
   @FXML
-  void logOutButton(ActionEvent event) throws IOException {
+  void logOutButton() throws IOException {
     Parent secondRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("mainLogin.fxml")));
     Scene secondScene = new Scene(secondRoot);
     Stage stage = (Stage) logOutButton.getScene().getWindow();
@@ -32,11 +32,11 @@ public class registrationController {
     stage.show();
   }
   @FXML
-  void setRegButton(ActionEvent event) throws IOException {
+  void setRegButton() throws IOException {
     String username = userNameField.getText();
     String password = passWordField.getText();
     Customer newCustomer = new Customer(username, password);
-    FileHandle.appendUsertoFile(newCustomer);
+    FileHandle.appendUserToFile(newCustomer);
 
     Parent secondRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("mainLogin.fxml")));
     Scene secondScene = new Scene(secondRoot);

@@ -5,7 +5,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.util.Objects;
-
 public class App extends Application {
   public static void main(String[] args) {
     launch(args);

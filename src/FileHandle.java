@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 public class FileHandle {
-  public static void appendUsertoFile(Customer customer) {
+  public static void appendUserToFile(Customer customer) {
     String fileName = "user_data.txt";
 
     try (PrintWriter writer = new PrintWriter(new FileWriter(fileName, true))) {
