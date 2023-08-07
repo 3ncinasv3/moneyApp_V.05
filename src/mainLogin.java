@@ -34,14 +34,19 @@ public class mainLogin {
       stage.setResizable(true);
       stage.show();
     } else if (Authenticator.isValid(enteredUsername, enteredPassword)) {
-      Parent secondRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("customerPane.fxml")));
-      Scene secondScene = new Scene(secondRoot);
-      Stage stage = (Stage) loginButton.getScene().getWindow();
-      stage.setScene(secondScene);
-      stage.setResizable(true);
-      stage.show();
-    }
-    else outputLabel.setText("Invalid login");
+      Customer loggedInCustomer = Session.getInstance(enteredUsername, enteredPassword).getCustomer();
+      if (loggedInCustomer != null) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("customerPane.fxml"));
+        Parent secondRoot = loader.load();
+        customerController controller = loader.getController();
+        controller.setLoggedInCustomer(loggedInCustomer);
+        Scene secondScene = new Scene(secondRoot);
+        Stage stage = (Stage) loginButton.getScene().getWindow();
+        stage.setScene(secondScene);
+        stage.setResizable(true);
+        stage.show();
+      }
+    }  else outputLabel.setText("Invalid login");
   }
   @FXML
   void registerButton(ActionEvent event) throws IOException {

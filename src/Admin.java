@@ -4,4 +4,7 @@ public class Admin extends User {
     String storedPassword = "Password";
     return storedUsername.equals(username) && storedPassword.equals(password);
   }
+  private static void changeCustomerBalance() {
+
+  }
 }

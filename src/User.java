@@ -1,5 +1,4 @@
 public class User {
-  protected String accountNumber;
   protected String firstname;
   protected String lastname;
 
