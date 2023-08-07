@@ -10,7 +10,9 @@
    <TextField fx:id="balance" layoutX="224.0" layoutY="111.0" />
    <TextField fx:id="username" layoutX="224.0" layoutY="167.0" />
    <Button layoutX="412.0" layoutY="240.0" mnemonicParsing="false" text="Transfer" />
-   <Button fx:id="logOutButton" layoutX="273.0" layoutY="312.0" mnemonicParsing="false" onAction="#logOutButton" text="Logout" />
+   <Button fx:id="logOutButton" layoutX="273.0" layoutY="300.0" mnemonicParsing="false" onAction="#logOutButton" text="Logout" />
    <Label layoutX="128.0" layoutY="115.0" text="Your Balance is:" />
-   <Label layoutX="126.0" layoutY="171.0" prefHeight="17.0" prefWidth="286.0" text="Your Username:" />
+   <Button layoutX="48.0" layoutY="253.0" mnemonicParsing="false" text="Check Balance" />
+   <Button layoutX="48.0" layoutY="300.0" mnemonicParsing="false" text="Deposit" />
+   <Button layoutX="140.0" layoutY="300.0" mnemonicParsing="false" text="Pay Bills" />
 </Pane>

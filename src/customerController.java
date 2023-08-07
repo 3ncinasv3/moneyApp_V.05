@@ -32,11 +32,9 @@ public class customerController {
     loggedInCustomer = customer;
     updateUI();
   }
-
   private void updateUI() {
     balance.setText(String.valueOf(loggedInCustomer.getBalance()));
     username.setText(loggedInCustomer.getUsername());
     customerLabel.setText("Welcome!, " + loggedInCustomer.getUsername());
   }
-
 }
