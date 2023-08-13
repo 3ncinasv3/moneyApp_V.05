@@ -1,6 +1,3 @@
-import java.io.IOException;
-import java.util.Objects;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,6 +7,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.Objects;
 public class mainLogin {
   @FXML
   private Label outputLabel;
@@ -22,7 +22,7 @@ public class mainLogin {
   @FXML
   private Button registerButton;
   @FXML
-  void loginButton(ActionEvent event) throws IOException {
+  void loginButton() throws IOException {
     String enteredUsername = userNameText.getText();
     String enteredPassword = passWordText.getText();
 
@@ -49,7 +49,7 @@ public class mainLogin {
     }  else outputLabel.setText("Invalid login");
   }
   @FXML
-  void registerButton(ActionEvent event) throws IOException {
+  void registerButton() throws IOException {
     Parent secondRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("registrationPane.fxml")));
     Scene secondScene = new Scene(secondRoot);
     Stage stage = (Stage) registerButton.getScene().getWindow();

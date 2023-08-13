@@ -1,8 +1,8 @@
 public class Customer extends User {
   private double balance;
   private String username;
-  private String password;
-  private String accountNumber;
+  private final String password;
+  private final String accountNumber;
   public Customer(String username, String password){
     this.username = username;
     this.password = password;
@@ -29,7 +29,4 @@ public class Customer extends User {
     this.balance = balance;
   }
   public void setUsername(String username) { this.username = username; }
-  public void setPassword(String password) { this.password = password; }
-
-
 }

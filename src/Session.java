@@ -38,5 +38,20 @@ public class Session {
         break;
         }
       }
+  }
+  public static void transferCustomerBalance(String username, String accountNumber, double transferBalance, String user, String userAcc) {
+    ArrayList<Customer> customers = FileHandle.readCustomers();
+    for (Customer customer : customers) {
+      if (customer.getUsername().equals(username) && customer.getAccountNumber().equals(accountNumber)) {
+        double newBalance = customer.getBalance() + transferBalance;
+        customer.setBalance(newBalance);
+        FileHandle.writeCustomersToFile(customers);
+      }
+      else if (customer.getUsername().equals(user) && customer.getAccountNumber().equals(userAcc)){
+        double bal = customer.getBalance() - transferBalance;
+        customer.setBalance(bal);
+        FileHandle.writeCustomersToFile(customers);
+      }
     }
+  }
 }
