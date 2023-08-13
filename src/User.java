@@ -3,9 +3,7 @@ public class User {
   protected String lastname;
   protected String username;
   protected String password;
-  public String toString() {
-    return lastname + " " + firstname + " " + username+ " " + password;
-  }
+  public String toString() { return lastname + " " + firstname + " " + username+ " " + password; }
   protected User() {
   }
 }
