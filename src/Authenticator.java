@@ -1,25 +1,40 @@
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
 public class Authenticator {
-  public static boolean isValidUser(String username, String password) {
-    if (username == null || password == null || username.isEmpty() || password.isEmpty()) {
-      return false;
+//  public static boolean isValidUser(String username, String password) {
+//    return username != null && password != null && !username.isEmpty() && !password.isEmpty();
+//
+//  }
+public static boolean isValidUser(String username, String password) {
+  if (username == null || password == null || username.isEmpty() || password.isEmpty()) {
+    return false;
+  }
+  Customer customer = getCustomerByUsername(username);
+  if (customer != null) {
+    String hashedPassword = customer.getPassword();
+    String salt = customer.getSalt();
+    try {
+      String hashedInputPassword = PasswordHashingWithSalt.hashPassword(password, salt);
+      return hashedInputPassword.equals(hashedPassword);
+    } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+      throw new RuntimeException(e);
     }
-    Customer customer = getCustomerByUsername(username);
-    assert customer != null;
-    return true;
   }
-  public static boolean isValidNewUser(String username, String password) {
-    return username != null && password != null && !username.isEmpty() && !password.isEmpty();
-  }
+  return false;
+}
   public static Customer getCustomerByUsername(String username) {
     ArrayList<Customer> customers = FileHandle.readCustomers();
-    try {
-      for (Customer customer : customers)
-        if (customer.getUsername().equals(username))
-          return customer;
-    } catch (NullPointerException e) {
-        System.out.println("No User");
+    for (Customer customer : customers) {
+      if (customer.getUsername().equals(username)){
+        return customer;
+      }
     }
     return null;
   }
+
+  public static boolean isValidNewUser(String username, String password) {
+    return username != null && password != null && !username.isEmpty() && !password.isEmpty();
+  }
+
 }
