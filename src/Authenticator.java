@@ -1,13 +1,14 @@
 import java.util.ArrayList;
 public class Authenticator {
   public static boolean isValid(String username, String password) {
+    if (username == null || password == null || username.isEmpty() || password.isEmpty()) {
+      return false;
+    }
     ArrayList<Customer> customers = FileHandle.readCustomers();
-    boolean isValid = false;
     for (Customer customer : customers)
       if (customer.getUsername().equals(username) && customer.getPassword().equals(password)) {
-        isValid = true;
-        break;
+        return true;
       }
-    return isValid;
+    return true;
   }
 }

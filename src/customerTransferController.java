@@ -17,11 +17,9 @@ public class customerTransferController extends customerController {
   public Button sendButton;
   @FXML
   public Label balanceCheck;
-
   public void sendButtonGo() {
     String userName = customerUserNameField.getText();
     String accountNumber = customerAccountNumberField.getText();
-
 
     try {
       String inputValue = transferAmountField.getText();
