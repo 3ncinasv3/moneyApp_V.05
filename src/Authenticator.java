@@ -1,8 +1,6 @@
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
 public class Authenticator {
-  public static boolean isValidUser(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException {
+  public static boolean isValidUser(String username, String password) {
     if (username == null || password == null || username.isEmpty() || password.isEmpty()) {
       return false;
     }
