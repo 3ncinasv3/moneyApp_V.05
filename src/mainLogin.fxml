@@ -26,7 +26,7 @@
          <Insets />
       </opaqueInsets>
    </Button>
-   <Label fx:id="outputLabel" layoutX="225.0" layoutY="298.0" textFill="#f60000">
+   <Label fx:id="outputLabel" layoutX="242.0" layoutY="302.0" prefHeight="45.0" prefWidth="116.0" textFill="#f60000">
       <font>
          <Font size="18.0" />
       </font></Label>
