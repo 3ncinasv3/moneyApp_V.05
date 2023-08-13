@@ -28,11 +28,12 @@ public class adminController {
     stage.setResizable(false);
     stage.show();
   }
-  @FXML
+  @FXML // This method is for the admin to change balance of any customer in user_data.txt
   void updateBalance() {
     String username = usernameField.getText();
     String accountNumber = accountNumberField.getText();
     double newBalance = Double.parseDouble(balanceField.getText());
+    //Passes to session but should be dealt with by fileIO
     Session.updateCustomerBalance(username, accountNumber, newBalance);
     System.out.println("Balance updated");
   }

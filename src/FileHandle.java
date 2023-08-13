@@ -10,7 +10,8 @@ public class FileHandle {
       }
     }
     try (PrintWriter writer = new PrintWriter(new FileWriter(fileName, true))) {
-      writer.println(customer.getUsername() + "," + customer.getPassword() + "," + customer.getBalance() + "," + customer.getAccountNumber());
+      // Generating Salt and hashedPassword before new customer is added to user_data.txt
+      writer.println(customer.getUsername() + "," + customer.getPassword() + "," + customer.getBalance() + "," + customer.getAccountNumber() + "," + customer.getSalt());
     } catch (Exception e) {
       System.out.println("Try again");
     }
@@ -30,7 +31,8 @@ public class FileHandle {
         String password = data[1].trim();
         double balance = Double.parseDouble(data[2]);
         String accountNumber = data[3].trim();
-        customers.add(new Customer(username, password, balance, accountNumber));
+        String salt = data[4].trim();
+        customers.add(new Customer(username, password, balance, accountNumber, salt));
       }
     } catch (IOException e) {
       System.out.println("Error with IO");
@@ -40,7 +42,7 @@ public class FileHandle {
   public static void writeCustomersToFile(ArrayList<Customer> customers) {
     try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
       for (Customer customer : customers) {
-        writer.println(customer.getUsername() + "," + customer.getPassword() + "," + customer.getBalance() + "," + customer.getAccountNumber());
+        writer.println(customer.getUsername() + "," + customer.getPassword() + "," + customer.getBalance() + "," + customer.getAccountNumber() + "," + customer.getSalt());
       }
     } catch (Exception e) {
       System.out.println("Error writing to file.");

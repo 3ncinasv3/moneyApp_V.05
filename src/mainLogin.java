@@ -9,6 +9,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.Objects;
 public class mainLogin {
   @FXML
@@ -22,7 +24,7 @@ public class mainLogin {
   @FXML
   private Button registerButton;
   @FXML
-  void loginButton() throws IOException {
+  void loginButton() throws IOException, NoSuchAlgorithmException, InvalidKeySpecException {
     String enteredUsername = userNameText.getText();
     String enteredPassword = passWordText.getText();
 
@@ -33,8 +35,8 @@ public class mainLogin {
       stage.setScene(secondScene);
       stage.setResizable(true);
       stage.show();
-    } else if (Authenticator.isValid(enteredUsername, enteredPassword)) {
-      Customer loggedInCustomer = Session.getInstance(enteredUsername, enteredPassword).getCustomer();
+    } else if (Authenticator.isValidUser(enteredUsername, enteredPassword)) {
+      Customer loggedInCustomer = Session.getInstance(enteredUsername).getCustomer();
       if (loggedInCustomer != null) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("customerPane.fxml"));
         Parent secondRoot = loader.load();

@@ -10,6 +10,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.Objects;
 public class registrationController {
   @FXML
@@ -36,10 +38,10 @@ public class registrationController {
     stage.show();
   }
   @FXML
-  void setRegButton() throws IOException {
+  void setRegButton() throws IOException, NoSuchAlgorithmException, InvalidKeySpecException {
     String username = userNameField.getText();
     String password = passWordField.getText();
-    if (Authenticator.isValid(username, password)) {
+    if (Authenticator.isValidNewUser(username, password)) {
       Customer newCustomer = new Customer(username, password);
       String duplicate = FileHandle.appendUserToFile(newCustomer);
       if (duplicate == null) {
