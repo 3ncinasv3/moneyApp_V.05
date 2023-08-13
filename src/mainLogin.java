@@ -9,8 +9,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.util.Objects;
 public class mainLogin {
   @FXML
@@ -24,7 +22,7 @@ public class mainLogin {
   @FXML
   private Button registerButton;
   @FXML
-  void loginButton() throws IOException, NoSuchAlgorithmException, InvalidKeySpecException {
+  void loginButton() throws IOException {
     String enteredUsername = userNameText.getText();
     String enteredPassword = passWordText.getText();
 
