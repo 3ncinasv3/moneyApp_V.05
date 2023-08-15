@@ -9,7 +9,7 @@
    <TextField fx:id="customerUserNameField" layoutX="200.0" layoutY="51.0" />
    <TextField fx:id="customerAccountNumberField" layoutX="200.0" layoutY="95.0" />
    <TextField fx:id="transferAmountField" layoutX="200.0" layoutY="143.0" prefHeight="25.0" prefWidth="68.0" />
-   <Button fx:id="sendButton" layoutX="321.0" layoutY="183.0" mnemonicParsing="false" onAction="#sendButtonGo" text="Send" />
+   <Button fx:id="sendButton" layoutX="321.0" layoutY="183.0" mnemonicParsing="false" onAction="#sendButtonGo" text="Send" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
    <Label layoutX="23.0" layoutY="55.0" text="Customer Username:" />
    <Label layoutX="23.0" layoutY="99.0" text="Customer Account Number:" />
    <Label layoutX="23.0" layoutY="147.0" text="Transfer Amount:" />
