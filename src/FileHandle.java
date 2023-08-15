@@ -1,5 +1,8 @@
 import java.io.*;
 import java.util.ArrayList;
+/*
+* Class used to deal with fileIO used throughout the program
+ */
 public class FileHandle {
   private static final String fileName = "user_data.txt";
   public static String appendUserToFile(Customer customer) {

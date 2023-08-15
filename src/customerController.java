@@ -32,6 +32,9 @@ public class customerController {
     stage.setResizable(false);
     stage.show();
   }
+  /*
+  * Used a modular window so customer doesn't lose site of customer panel
+   */
   public void transferButtonGo() throws IOException {
     FXMLLoader loader = new FXMLLoader(getClass().getResource("customerTransferPane.fxml"));
     Parent transferRoot = loader.load();
@@ -41,6 +44,7 @@ public class customerController {
 
     Scene transferScene = new Scene(transferRoot);
     Stage transferStage = new Stage();
+    transferStage.setTitle("Make a transfer to a friend");
     transferStage.setScene(transferScene);
     transferStage.initModality(Modality.APPLICATION_MODAL);
     transferStage.setResizable(false);

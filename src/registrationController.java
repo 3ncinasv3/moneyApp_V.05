@@ -13,6 +13,9 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Objects;
+/*
+* This class handles the registration scene and calls on Authenticator and  FileHandle.java
+ */
 public class registrationController {
   @FXML
   public TextField firstNameField;

@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Objects;
+/*
+* Admin panel controller
+ */
 public class adminController {
   @FXML
   public TextField usernameField;

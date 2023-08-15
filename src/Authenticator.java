@@ -1,11 +1,10 @@
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
+/*
+* This class handles the authentication of new customers and the customer login
+ */
 public class Authenticator {
-//  public static boolean isValidUser(String username, String password) {
-//    return username != null && password != null && !username.isEmpty() && !password.isEmpty();
-//
-//  }
 public static boolean isValidUser(String username, String password) {
   if (username == null || password == null || username.isEmpty() || password.isEmpty()) {
     return false;

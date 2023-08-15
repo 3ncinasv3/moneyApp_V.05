@@ -4,6 +4,9 @@ import java.security.spec.InvalidKeySpecException;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import java.util.Base64;
+/*
+* This class is used to a. generate salt when a new customer registers and b. to hash the salt to a password to be stored
+ */
 public class PasswordHashingWithSalt {
   public static String generateSalt() throws NoSuchAlgorithmException {
     SecureRandom random = SecureRandom.getInstanceStrong();

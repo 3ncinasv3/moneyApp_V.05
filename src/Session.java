@@ -1,11 +1,13 @@
 import java.util.ArrayList;
+/*
+* This class handles the session logic when a user logs in to keep track of credentials and help update the UI
+ */
 public class Session {
   private static Session instance;
   private final Customer customer;
   private Session(Customer customer) {
     this.customer = customer;
   }
-
   // Read and find customer from data and return a customer object that can be passed back to session
   private static Customer customerSession(String username) {
     ArrayList<Customer> customers = FileHandle.readCustomers(); //

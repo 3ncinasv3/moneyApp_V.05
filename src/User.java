@@ -1,3 +1,6 @@
+/*
+* Superclass for admin and customer users alike
+ */
 public class User {
   protected String firstname;
   protected String lastname;
